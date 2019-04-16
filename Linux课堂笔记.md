@@ -147,14 +147,23 @@
       pwd->pw_name;    #调用成员
 
   + struct passwd
+
     {
-      char *pw_name;           #用户登录名     
+
+    char *pw_name;           #用户登录名     
+
       char *pw_passwd;           #密码  （加密后） 
+
       uid_t pw_uid;              #用户ID 
+
       __gid_t pw_gid;              #组 ID 
+
       char *pw_gecos;             #详细用户名  
+
       char *pw_dir;                #用户目录 
+
       char *pw_shell;               # shell 程序名
+
     };
 
   -----
