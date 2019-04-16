@@ -74,8 +74,13 @@
 
 - **echo的用法**
 
-  + echo $PATH  查看path下的信息  
+  + echo $PATH  查看PATH下的文件
+
   + 
+
+- **PATH**
+
+  + 文件放到PATH的路径下  在什么目录下都可以执行   eg： pwd   ls  在任何目录下都可以执行 他们这些命令脚本全部放在了 PATH 下的某个路径    
 
 - main() 函数的三个参数   
 
@@ -120,6 +125,38 @@
   - apt-get  install -f   自动安装
   - apt -get authoremove   删除自动安装的包
 
-  -------
+- **scppi  and  sshpi**
+
+  + scppi --->非局域网下的  scp功能    scppi为已经安装好的脚本文件
+  + sshpi  --->非局域网下  链接树莓派   实现方法如同  树莓派链接到一个公网服务器  用户也可以连接到  如同scp -3 的功能实现
+
+- **#include<unistd.h>**
+
+  + gethostname(haostnanme,sizeof(hostname))   ---->   此函数用于获取主机名 
+  + getcwd(pwd , sizeof(pwd))  ---->此函数用于获取路径
+  + getuid()  ---> 获取ID号
+
+- **#include <pwd.h>**
+
+  + getpwuid(id 号) -->查看passwd数据查看用户名
+
+    + struct passwd *pwd;
+
+      pwd =getpwuid(getuid());
+
+      pwd->pw_name;    #调用成员
+
+  + struct passwd
+    {
+      char *pw_name;           #用户登录名     
+      char *pw_passwd;           #密码  （加密后） 
+      uid_t pw_uid;              #用户ID 
+      __gid_t pw_gid;              #组 ID 
+      char *pw_gecos;             #详细用户名  
+      char *pw_dir;                #用户目录 
+      char *pw_shell;               # shell 程序名
+    };
+
+  -----
 
   
