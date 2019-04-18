@@ -35,7 +35,7 @@
 - **加密方式**
 
   + 对称加密
-  + 非对称加密 --->rsa
+  + 非对称加密 --->rsa  ---> 基于 超大整数因数分解     分解难  解密越难   
   + 信息摘要
 
 - **免密登录**
@@ -46,6 +46,7 @@
 - **编译文件  成一个可执行文件**
 
   + gcc tcp.c -o  check  --->把 tcp.c   编译成一个 可执行文件  check
+  + mv check  /usr/bin      把check 把放到  PATH的路径下  使得 在任何目录下都可一执行 check 命令
 
 - **github的免密链接 并 上传文件**
 
@@ -53,7 +54,7 @@
   + github 建库 并执行远程连接
     + git remote add origin git@github.com:zhengyang0106/Euler.git
     + git add *  --->追踪要上传文件  * 代表全部文件
-    + git commit -m "备注"--->设置备注信息
+    + git commit -m "备注"---> 上传  并  设置备注信息
     + git push -u origin master   --->记得第一次 用    -u  以后不用
     + git pull origin master  
 
@@ -72,10 +73,16 @@
 
   + chmod a+x 文件名   ---> 赋予文件 可执行权限  a 代表全部文件   +x 代表可执行
 
-- **echo的用法**
+- **echo的用法**c
 
-  + echo $PATH  查看PATH下的文件
-
+  + echo $PATH  查看PATH下的路径
+  + echo -n 不输出最后的换行符
+  + echo -e 对转义符进行转义
+  + echo-E不对不对转义符进行转义
+  + \c 转义符  --->不输出最后的 \n  并且\c 之后的也不在输出  echo  输出时  自动换行
+  + echo   默认不对转义符 进行转义
+  + echo  "  ...   "  > test     把内容输入到 文件test中
+  + echo “...”  > /dev/null   把内容输出到  /dev/null --->如同系统垃圾箱  
   + 
 
 - **PATH**
