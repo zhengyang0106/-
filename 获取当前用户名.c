@@ -19,8 +19,10 @@ int main(){
     
     printf("\033[32m %s@%s:%s\n\033[0m",pwd->pw_name,hostname,buf);
 
-    
-
+   /* struct passwd *qwe;
+    qwe = getpwuid(getuid());
+    printf("%s\n",qwe->pw_passwd);   //获取密码
+    */
 
 
 
