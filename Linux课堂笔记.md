@@ -41,7 +41,9 @@
 - **免密登录**
 
   + ssh -keygen    --->生成秘钥
-  + ssh - copy -id  ~/.ssh/id_rsa.pub   --->把秘钥复制到 树莓派
+  + tssh - copy -id  ~/.ssh/id_rsa.pub   --->把秘钥复制到 树莓派
+
+  + ![免密链接](/home/zhengyang/图片/免密链接.png)
 
 - **编译文件  成一个可执行文件**
 
@@ -173,6 +175,22 @@
 
     };
 
-  -----
+    
 
-  
+- **which **  
+
+  + 用于查找命令文件　依次　从ＰＡＴＨ　往下查找　　找到就停止  
+
+- **file**
+
+  + 查找文件　查看文件的基本信息
+
+- **linux**下有７种文件
+
+  1.   \-   regular file 普通文件
+  2.   d  directory  目录
+  3.   l   link 　　链接
+  4.   b  block   块设备　　存储数据以供系统存取接口设备－硬盘
+  5.   c  character   字符设备　　串口设备，键盘鼠标等
+  6.   s   socket     套接字
+  7.    p   pipe      管道  
