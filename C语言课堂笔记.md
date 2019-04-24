@@ -84,4 +84,10 @@
     2. 边界条件处理
     3. 问题出处理过程　和　递归过程
     4. 返回结果
-
+  + 变参函数
+    + <srdarg.h> 头文件
+    + va_list 类型　　参数指针类型　　用于定义　一个可变参数指针　ej : va_list  arg;
+    + va_start(arg, n) 函数　用于初始化一个　arg 参数指针；　并传入参数列表的　最后一个参数名
+    + va_arg(arg, int) 函数　　用于　取出一个参数列表中的　　int 型　参数值；
+    + va_copy(va_list a,  arg);  　　用于初始化　ａ　　用arg 　初始化a;
+    +  　
