@@ -91,3 +91,4 @@
     + va_arg(arg, int) 函数　　用于　取出一个参数列表中的　　int 型　参数值；
     + va_copy(va_list a,  arg);  　　用于初始化　ａ　　用arg 　初始化a;
     +  　
+
