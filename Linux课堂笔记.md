@@ -597,3 +597,134 @@
   extern int opterr      将错误信息输出到stderr  为0 时表示不输出
 
   extern int optopt     不在选项字符串optstring中的选项
+
++ **chadir(const char *path)**   --- 改变当前路径
+
+  头文件<unistd.h>
+
+  失败返回-1
+
+  成功返回0;
+
++ **struct dirent**    ---用于存储文件基本信息
+
+  unsigned short d_reclen;   --- 文件名长
+
+  unsigned char d_type;   --- 文件类型
+
+  char  d_name[name_max + 1]  --- 文件名
+
++ **opendir() readdir()** --打开和读取目录
+
+  opendir （） 用来打开参数name 指定的目录，并返回DIR*形态目录流.
+
+  readdir ()  读取目录
+
++ **stat(const char *file_name, struct stat *buf)** ---获取文件状态函数
+
+  把文件file_name 的状态 存储到buf结构体中
+
+  头文件 <sys/stat.h>  <unistd.h>
+
+  返回值 成功返回0  失败返回-1 
+
++ 命令与文件的查询
+
+  + which   
+
+    查找PATH路径下的所有可执行文件
+
+  + whereis    查找特定文件
+
+    | -b   | 查找二进制文件            |
+    | ---- | ------------------------- |
+    | -m   | 只查找manual路径下的 文件 |
+    | -s   | 只查找source源文件        |
+    | -u   | 其他文件                  |
+    |      |                           |
+
+  + locate 
+
+     模糊定为查找  运用索引文件查找，
+
+    | -i               | 忽略大小写         |
+    | ---------------- | ------------------ |
+    | -r               | 后面接正则表达式   |
+    | 相关配置文件     | /etc/updatedb.conf |
+    | 查找文件索引位置 | /ect/lib/mlocate   |
+
+  + **find**
+
+    高级查找功能
+
+    | 与时间相关的       | -atime  -mtime -ctime                 |
+    | ------------------ | ------------------------------------- |
+    | -mtime n           | n天前的“一天之内“修改过的文件         |
+    | -mtime  +n         | n天之前，不包含n， 修改过得文件       |
+    | -mtime  -n         | n天之内，包含n，修改过得文件          |
+    | -newer  file       | 比file 还要新的文件                   |
+    | **与用户和组相关** | **find 【path】【option】【action】** |
+    | -uid    n          | 用户UID、为n                          |
+    | gid  n             | 群组GID为n                            |
+
+    | -user name               | 用户名为name                          |
+    | ------------------------ | ------------------------------------- |
+    | -group name              | 群组名为name                          |
+    | nouser                   | 文件所有者不存在                      |
+    | nogroup                  | 文件所在组不存在                      |
+    | **与文件权限及名称有关** | **find 【path】 【option】 【action】 |
+    | -name filename           | 文件名filename                        |
+    | -size 【+-】SIZE         | 查找比SIZE大或小的                    |
+    | -type  TYPE fbcdlsp      | 查找其中文件类型                      |
+    | -perm mode               | mode刚好等于的文件                    |
+    | -perm  -mode             | 全部包含mode的文件                    |
+
+    | -EXEC 的用法                       |                                                              |
+    | ---------------------------------- | ------------------------------------------------------------ |
+    | find   语句   -exec  ls -l {}  \； | find执行  语句后  通过 -exec把 结果放到{ }里面，执行到；结束 |
+
+    
+
+### #shell编程基础
+
+case $i in 
+
+​	1 )
+
+; ;
+
+esac 
+
+数组 declare -a  num
+
+或这  name【123】= value
+
+name=（123,123）数组全部就两个值
+
+${#num[@]}  求数组个数
+
+￥{！num【@】}  找到数组下表
+
+num+=（a b c） 数组追加
+
+unset删除数组或元素
+
+unset b   unset b【122】
+
+$$ 当前进程pid
+
+￥！ 上一个指令的 pid
+
+￥{pa ：-我的人} 表达式为woef
+
+￥{pa：=word} 为设施变量 未定义 返回值为 word 并赋值给变量
+
+￥{pa：？word}  未定义就退出
+
+￥{pa：+wod}如果已定义返回word
+
+￥{！pre*} 前缀匹配  pre开头bianliang 
+
+# #awk  eval   命令学习 
+
+ 
